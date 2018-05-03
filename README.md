@@ -14,5 +14,5 @@ thay đổi ý tưởng game: từ game dò mìn sang game snake
 -
 -
 -
--game sẽ như sau: vẽ những thứ ban đầu( khung ,rắn,thức ăn,điểm,mạng..) -> rắn di chuyển-> xử lý-> update hình ảnh
--....
+-cơ chế: vẽ những thứ ban đầu( khung ,rắn,thức ăn,điểm,mạng..) -> rắn di chuyển-> xử lý-> update hình ảnh
+- rắn di chuyển: khi rắn ăn thức ăn thì xóa
