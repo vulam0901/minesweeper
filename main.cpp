@@ -1,4 +1,3 @@
-
 #include<time.h>
 #include"screen.h"
 #include"snake.h"
@@ -34,24 +33,18 @@ void mainloop(Point2D  *food,int &score,float &difficult_level,int &heart,float 
     }
     
     move_snake(direction,console_wide,console_height);
-//    draw_food_lv1(food,console_wide,console_height);
 	for(int i=3;i<snakelenght-1;i++)
 		if (i != 0 && (snake[0].x == snake[i].x && snake[0].y == snake[i].y)) heart--;
 	if(time<0)
 	{
-//		if(heart>0)
-//		{
 			time=15; // refrest time
 			heart--;	
-//		}
-//		else endGame=true;
 	};
 	if(heart<0) endGame= true;
 	if(snake[0].x==(food+1)->x&& snake[0].y==(food+1)->y) {
 		if((score+5)/10<=heart) heart--;
 		heart++;
 		delete_food(food+1);
-//		draw_food_lv2(food+1,console_wide,console_height);
 	};
     if(snake[0].x==food->x&& snake[0].y==food->y)
 	{
@@ -94,15 +87,13 @@ int main(){
 	draw_snake(snake[0],snake[1],snake[2]);
 	while(!endGame){
 		Sleep(difficult_level);
-//		printf_time(time,difficult_level,endGame);
 		mainloop(&food[0],score,difficult_level,heart,time);
 		draw_snake(snake[0],snake[1],snake[snakelenght-1]);
-		printf_time(time,difficult_level,heart);
+		printf_time(time,difficult_level,heart,endGame);
 		printf_score(score);
 		printf_heart(heart);
 	};
 	
-//	gameover:;
 	Sleep(3000);
 	gameover(score);
 	

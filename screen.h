@@ -28,15 +28,16 @@ void printf_heart(int & heart){
 	gotoxy(75,8);
 	if(heart>=0) printf("%d",heart);
 }
-void printf_time(float &time,float &difficult_level,int &heart){
+void printf_time(float &time,float &difficult_level,int &heart,bool & endGame){
 	gotoxy(74,13);
 	time=time-difficult_level/1000;
-	if(time>=0) printf("%2.f",time);
-	else if(heart<0 && time<0){
+	if(time>0) printf("%2.f",time);
+	else if(heart<=0 && time<=0){
 		gotoxy(71,13);
 		SetTeColor(12);
 		printf("time out!");
 		SetTeColor(15);
+		endGame= true;
 	}
 }
 void gameover(int &score)
