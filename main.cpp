@@ -41,11 +41,15 @@ void mainloop(Point2D  *food,int &score,float &difficult_level,int &heart,float 
 			heart--;	
 	};
 	if(heart<0) endGame= true;
-	if(snake[0].x==(food+1)->x&& snake[0].y==(food+1)->y) {
-		if((score+5)/10<=heart) heart--;
+	
+	
+	if(snake[0].x==(food+1)->x&& snake[0].y==(food+1)->y) 
+	{
 		heart++;
 		delete_food(food+1);
 	};
+	
+	
     if(snake[0].x==food->x&& snake[0].y==food->y)
 	{
 		printf("%c",7);

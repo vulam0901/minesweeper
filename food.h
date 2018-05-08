@@ -44,6 +44,8 @@ void draw_food_lv2(Point2D *food,int consolewide,int consoleheight)
 void delete_food(Point2D *food){
 	gotoxy(food->x,food->y);
 	printf(" ");
+	food->x=80;
+	food->y=26;
 }
 
 
