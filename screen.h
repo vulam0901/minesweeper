@@ -2,7 +2,7 @@
 #define screen_h
 #include<stdio.h>
 #include"cosole.h"
-void draw_khung(int console_wide,int console_height)
+void draw_khung(int console_wide,int console_height)		// ve khung , score,heart,time
 {
 	for(int i=0;i<=console_height+1;i++){
 		gotoxy(console_wide,i);

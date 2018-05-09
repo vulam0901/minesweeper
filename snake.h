@@ -4,16 +4,17 @@
 Point2D snake[1000];
 int snakelenght=3;
 
-void move_snake(Point2D &dir,int consolewide,int consoleheight){
-        
-        for(int i=snakelenght-1;i>0;i--)
+void move_snake(Point2D &dir,int consolewide,int consoleheight)				// dir la trang thái di chuyên cua ran(up,down,..)
+{																			//dinh nghia up=(0,-1),down=(0,1),left=(-1,0),right=(1,0)
+																			
+        for(int i=snakelenght-1;i>0;i--)									//	 vi trí snake_head(new)=snake(old) +dir
 		{
         	snake[i]=snake[i-1];
 		}
 //        snake[0].x += dir.x; snake[0].y += dir.y;
-		snake[0]=snake[0].add(dir);
+		snake[0]=snake[0].add(dir); 										//xác dinh vi trí snake_head moi
 
-        if (snake[0].x >= consolewide) snake[0].x = 0;
+        if (snake[0].x >= consolewide) snake[0].x = 0;						// khi ran ra khoi khung  thì cho nó xuât hiên lai tai bên kia khung
         if (snake[0].x < 0) snake[0].x = consolewide-1;
         if (snake[0].y >= consoleheight+1) snake[0].y = 0;
         if (snake[0].y < 0) snake[0].y = consoleheight;
@@ -21,7 +22,8 @@ void move_snake(Point2D &dir,int consolewide,int consoleheight){
         
        
 }
-void draw_snake(Point2D & snake_head,Point2D &snake_body,Point2D &snake_tail){
+void draw_snake(Point2D & snake_head,Point2D &snake_body,Point2D &snake_tail)		// ve snake_haed,snake_body,snake_tail( cho con ran không bi nhâp nháy)
+{
 	SetTeColor(11);
 	int check=0;
 	for(int i=0;i<snakelenght-1;i++){
