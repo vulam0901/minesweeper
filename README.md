@@ -14,4 +14,4 @@ IV. Luật chơi:
 V. Hướng phát triển:
 - làm game thêm nhiều map mới,có độ khó tăng dần theo từng map
 - tạo thêm các trướng ngại vật đứng yên,chuyển động để ra tăng sự khéo léo của người chơi
--cải thiện đồ họa cho game
+- cải thiện đồ họa cho game
